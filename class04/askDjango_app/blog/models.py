@@ -9,10 +9,14 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-id']
+
     # 객체만 출력시 어떤 포맷으로 보여줄 것인가를 결정함
     # 객체 조회와 상관 없음
     def __str__(self):
         return self.title
+
 
 '''
 1) ./manage.py makemigrations blog
