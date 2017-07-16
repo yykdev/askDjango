@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AskDjango</h1>
+    <hr>
+    <form action="" method="get">
+        <input type="text" name="query" value="{{ query }}">
+        <input type="submit" value="검색">
+        &nbsp; 검색 결과 : {{ post_list.count }} 건
+    </form>
+    <ul>
+    {% for post in post_list %}
+        <li>{{ post }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
