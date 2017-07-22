@@ -6,10 +6,6 @@ from django.shortcuts import render
 from .models import Post
 
 
-def blog_index(request):
-    return HttpResponse('Hello Blog Main !!!')
-
-
 def post_list(request):
     qs = Post.objects.all()
     query = request.GET.get('query', '')
@@ -21,3 +17,11 @@ def post_list(request):
         'query': query,
     }
     return render(request, 'blog/post_list.html', context=context)
+
+
+def post_detail(request, pk):
+    post = Post.objects.get(pk=pk)
+    context = {
+        'post': post,
+    }
+    return render(request, 'blog/post_detail.html', context=context)
