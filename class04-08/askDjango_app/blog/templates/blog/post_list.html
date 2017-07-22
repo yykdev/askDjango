@@ -8,7 +8,7 @@
     </form>
     <ul>
     {% for post in post_list %}
-        <li>{{ post.id }}. <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> ({{ post.created_at|timesince }} 전)</li>
+        <li>{{ post.id }}. <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a> ({{ post.created_at|timesince }} 전)</li>
     {% endfor %}
     </ul>
 {% endblock %}
