@@ -4,11 +4,11 @@
     <form action="" method="get">
         <input type="text" name="query" value="{{ query }}">
         <input type="submit" value="검색">
-        &nbsp; 검색 결과 : {{ post_list.count }} 건
+        &nbsp; 검색 결과 : {{ post_list|length }} 건
     </form>
     <ul>
     {% for post in post_list %}
-        <li>{{ post.id }}. <a href="/blog/{{ post.id }}/">{{ post.title }}</a> ({{ post.created_at|timesince }} 전)</li>
+        <li>{{ post.id }}. <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> ({{ post.created_at|timesince }} 전)</li>
     {% endfor %}
     </ul>
 {% endblock %}
