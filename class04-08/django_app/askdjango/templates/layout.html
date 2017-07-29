@@ -1,0 +1,28 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>AskDjango 서비스</title>
+<style>
+body {
+}
+</style>
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+    <h1>AskDjango</h1>
+
+    {% block logo %}
+        <img src="{% static 'python_logo.jpg' %}" style="width: 100px" alt="">
+    {% endblock %}
+
+    <hr/>
+
+    {% block content %}
+    {% endblock %}
+
+    <hr/>
+    &copy; 2017 AskDjango. All rights reserved.
+</body>
+</html>
